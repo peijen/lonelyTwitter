@@ -47,8 +47,23 @@ public class LonelyTwitterActivity extends Activity {
 	}
 
 	@Override
-	protected void onStart() {
+	protected void onStart(){
 		// TODO Auto-generated method stub
+		// if Object u = new Author();  then the next line wont work 
+		User u = new Reader();    //hold the reference of the class user, allocate memory constructor
+		                        // this will run the second constructor in User.java
+		//User u = new User(); when User.java has public abstract class then it wont work
+		//abstract only work on sub-class not their superclass
+		
+		ArrayList<User> array = new ArrayList<User>();
+		
+		
+		try{
+			
+		u.setUsername("joe");
+		}catch (IOException e){
+			
+		}
 		super.onStart();
 		String[] tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
