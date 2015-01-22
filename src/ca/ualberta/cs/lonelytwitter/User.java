@@ -1,8 +1,10 @@
 package ca.ualberta.cs.lonelytwitter;
 
 
-public abstract class User extends Object implements UserLike  //with or without extends Object doesn't matter  wont change anything
+public  class User //User extends Object implements UserLike  //with or without extends Object doesn't matter  wont change anything
 {
+	
+	/*
 	protected String username;  //attribute called username  contain a string
 
 	
@@ -20,7 +22,7 @@ public abstract class User extends Object implements UserLike  //with or without
 		this.username = x;   //this.username is the attribute ; this.  is often implied
 		
 	}
-*/
+
 
 	public User(String username)       //added a method to user class; constructor: has the same name as class
 	{
@@ -37,5 +39,5 @@ public abstract class User extends Object implements UserLike  //with or without
 		this.username = "anonymous";
 	} 
 
-	
+	*/
 }

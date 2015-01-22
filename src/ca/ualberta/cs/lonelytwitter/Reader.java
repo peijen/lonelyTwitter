@@ -10,7 +10,7 @@ public class Reader extends User
 			throw new RuntimeException("Name too short");
 		}
 		
-		this.username = x;   
+		//this.username = x;   
 		
 	}
 }

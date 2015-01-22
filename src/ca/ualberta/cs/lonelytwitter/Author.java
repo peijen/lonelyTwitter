@@ -2,10 +2,10 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.io.IOException;
 
-public class Author extends User      // author is a sub-class of user
+public class Author       // author is a sub-class of user
 {
-	@Override   //optional  to make it clear
-
+	//@Override   //optional  to make it clear
+/*
 	public void setUsername(String x) throws IOException   // must have throw in IOException 
 	{
 		if(x.length() > 8)
@@ -17,4 +17,5 @@ public class Author extends User      // author is a sub-class of user
 		this.username = x;   
 		
 	}
+*/
 }

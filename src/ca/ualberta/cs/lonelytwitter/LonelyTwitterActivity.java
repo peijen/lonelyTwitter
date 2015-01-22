@@ -23,7 +23,8 @@ public class LonelyTwitterActivity extends Activity {
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
-	
+	private ArrayList<String> tweets;
+	private ArrayAdapter<String> adapter;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,8 +40,10 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
+				tweets.add(text);
+				adapter.notifyDataSetChanged();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+				//finish();
 
 			}
 		});
@@ -50,11 +53,11 @@ public class LonelyTwitterActivity extends Activity {
 	protected void onStart(){
 		// TODO Auto-generated method stub
 		// if Object u = new Author();  then the next line wont work 
-		User u = new Reader();    //hold the reference of the class user, allocate memory constructor
+		//User u = new Reader();    //hold the reference of the class user, allocate memory constructor
 		                        // this will run the second constructor in User.java
 		//User u = new User(); when User.java has public abstract class then it wont work
 		//abstract only work on sub-class not their superclass
-		
+		/*
 		ArrayList<User> array = new ArrayList<User>();
 		
 		
@@ -64,14 +67,15 @@ public class LonelyTwitterActivity extends Activity {
 		}catch (IOException e){
 			
 		}
+		*/
 		super.onStart();
-		String[] tweets = loadFromFile();
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		tweets = loadFromFile();
+		adapter = new ArrayAdapter<String>(this,
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	private String[] loadFromFile() {
+	private ArrayList<String> loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -89,7 +93,7 @@ public class LonelyTwitterActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return tweets.toArray(new String[tweets.size()]);
+		return tweets;
 	}
 	
 	private void saveInFile(String text, Date date) {

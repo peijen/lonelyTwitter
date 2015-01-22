@@ -1,15 +1,15 @@
 package ca.ualberta.cs.lonelytwitter;
 
 
-public class friend extends Addsomeclasses
+public class friend 
 {
 
-	@Override
-	public void setFriend(String name)
+	//@Override
+	/*public void setFriend(String name)
 	{
 
 		// TODO Auto-generated method stub
 		this.friend = name;
 	}
-
+*/
 }
